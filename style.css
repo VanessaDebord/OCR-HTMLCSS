@@ -1,0 +1,126 @@
+/* MISE EN FORME*/
+
+/* Téléchargement d'une police */
+
+@font-face { 
+    font-family: 'cantarellregular';
+    src: url('font/cantarell-regular-webfont.eot');
+    src: url('font/cantarell-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/cantarell-regular-webfont.woff') format('woff'),
+         url('font/cantarell-regular-webfont.ttf') format('truetype'),
+         url('font/cantarell-regular-webfont.svg#cantarellregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Mise en forme générale avec possibilité d'afficher d'autres polices */
+
+body
+{
+	background-image: url("img/fond.jpg");
+	color:rgb(52,21,1);
+	font-family: 'cantarellregular', Trebuchet, Serif;
+}
+
+/* Insertion d'une photo d'identité */
+
+.photo
+{
+	float: right;
+	border : 1px rgb(142,141,141) solid;
+	box-shadow: 6px 6px 6px rgb(142,141,141);
+}
+
+/* Titre Petichat Gropapatte */
+
+h1
+{
+	color: rgb(52,21,1);
+	text-align: center;
+	font-size: 40px;
+}
+
+/* Majorcat particulier avec une taille particulière et un lien */
+
+	.presentation
+	{
+		font-size: 25px;
+		text-align: center;
+	}
+
+	a
+	{
+		color:rgb(52,21,1);
+	}
+
+	a:hover
+	{
+		color: rgb(109,74,42);
+	}
+
+/* Listes Experience Competences et Formation */
+
+section
+{
+	display: inline-block;
+	vertical-align: top;
+	width: 30%;
+	background-color: rgba(155,154,149, 0.5); /* J'ai mis un fond sur mes listes avec une opacité moyenne pour faire ressortir le texte des puces */
+}
+
+
+
+
+/* MISE EN PAGE avec la technique flexbox */
+
+#lisere, #page
+{
+	display: inline-block;
+	vertical-align: top;
+}
+
+	#lisere /*Partie gauche de mon conteneur */
+	{
+		min-width: 70px;
+		height: 860px;
+		background-image: url("img/reseaux_sociaux.jpg");
+	}
+
+	#page /*Partie droite de mon conteneur */
+	{
+		width: 85%;
+	}
+
+
+
+/* MEDIA QUERIE */ 
+
+@media all and (max-width : 1024px)
+{
+    h1
+    {
+        text-align: center;
+    }
+
+    section
+    {
+        width: auto ;
+        flex-wrap: wrap;
+        background-color: rgba(155,154,149, 0.5); /* J'ai mis un fond sur mes listes avec une opacité moyenne pour faire ressortir le texte des puces */
+    }
+
+    #lisere, #page
+    {
+        display: inline-block;
+    }
+
+    #lisere
+    {
+        display: none;
+    }
+
+    #page
+    {
+        width: auto;
+    }
+}
